@@ -1,0 +1,12 @@
+{
+  "name": "claude-data-analyst",
+  "version": "1.0.0",
+  "description": "First-pass data analysis toolkit: correlations, PII flagging, anomalies, hypothesis tests, data dictionaries, and trend analysis on a dataset in a folder.",
+  "author": {
+    "name": "Daniel Rosehill",
+    "url": "https://github.com/danielrosehill"
+  },
+  "repository": "https://github.com/danielrosehill/Claude-Data-Analyst-plugin",
+  "license": "MIT",
+  "keywords": ["data-analysis", "eda", "statistics", "pii", "anomaly-detection", "data-dictionary"]
+}
