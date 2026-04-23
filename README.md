@@ -12,6 +12,11 @@ First-pass data analysis toolkit for Claude Code. Point it at a CSV, Parquet, or
 | `hypothesis-testing` | Formalise a user-stated hypothesis, pick the right test, and return supports/refutes/inconclusive. |
 | `data-dictionary-creator` | Merge auto-profiled schema with the user's description into a full data dictionary. |
 | `trend-analysis` | Identify and narrate the major trends — directional, seasonal, compositional, per-segment. |
+| `setup-data-workspace` | Discover data files in the current repo, load them into a DuckDB database, and update CLAUDE.md with query instructions. |
+| `data-enrichment` | Diagnose gaps between the user's analytical goal and the dataset, propose external sources, plan and implement enrichment. |
+| `multivariate-analysis` | Partial correlations, VIF, regression with interactions, Lasso, and PCA to tell which variables actually drive the target and which are redundant. |
+| `forensic-sweep` | Flag data that looks suspiciously clean, imputed, smoothed, or pre-normalised — so the user knows what was done upstream before they got it. |
+| `type-consistency-sweep` | Detect within- and cross-file type inconsistencies that block analysis or DB loading; fix trivial cases or delegate to a `Claude-Data-Wrangler` skill. |
 
 ## Recommended CLI tooling
 
