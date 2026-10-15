@@ -76,19 +76,19 @@ For each finding, pick one of:
 
 Apply via DuckDB: write the result to a new file (`*_typed.parquet`) or a new table, never overwrite the source. Log the transformation.
 
-**(b) Delegate to a `Claude-Data-Wrangler` skill** — when the fix matches an existing specialist skill, invoke it rather than re-implementing. Matching map:
+**(b) Delegate to a `data-wrangler` skill** — when the fix matches an existing specialist skill, invoke it rather than re-implementing. Matching map:
 
 | Finding | Delegate to |
 |---|---|
-| Text-formatted numbers across a file | `Claude-Data-Wrangler:text-to-numeric` |
-| Mixed / inconsistent date formats | `Claude-Data-Wrangler:date-wrangling` |
-| Country name vs ISO code mismatch | `Claude-Data-Wrangler:standardise-country-names` or `:add-iso3166` |
-| Missing currency codes on monetary columns | `Claude-Data-Wrangler:enrich-with-currency` |
-| Unicode / case / whitespace drift | `Claude-Data-Wrangler:unicode-consistency` |
-| JSON needs flattening for relational load | `Claude-Data-Wrangler:json-restructure` |
-| CSV ↔ JSON conversion for destination | `Claude-Data-Wrangler:csv-to-json` |
-| Loading into a SQL / graph database | `Claude-Data-Wrangler:sql-load` or `:graph-database` |
-| Cleanliness audit beyond types | `Claude-Data-Wrangler:data-cleanliness-scan` |
+| Text-formatted numbers across a file | `data-wrangler:text-to-numeric` |
+| Mixed / inconsistent date formats | `data-wrangler:date-wrangling` |
+| Country name vs ISO code mismatch | `data-wrangler:standardise-country-names` or `:add-iso3166` |
+| Missing currency codes on monetary columns | `data-wrangler:enrich-with-currency` |
+| Unicode / case / whitespace drift | `data-wrangler:unicode-consistency` |
+| JSON needs flattening for relational load | `data-wrangler:json-restructure` |
+| CSV ↔ JSON conversion for destination | `data-wrangler:csv-to-json` |
+| Loading into a SQL / graph database | `data-wrangler:sql-load` or `:graph-database` |
+| Cleanliness audit beyond types | `data-wrangler:data-cleanliness-scan` |
 
 Delegation means invoking the matching skill via `Skill` with the relevant file path and options. Don't silently re-do the work.
 
@@ -115,5 +115,5 @@ After any fixes or delegated wrangling, re-run Steps 1–3 on the output artifac
 
 - **Never overwrite source files.** Write typed outputs alongside originals (`*_typed.parquet`, `*_normalised.csv`) and make the new path visible in the report.
 - For very large datasets, sample the first 100k rows for detection, but apply fixes to the full file.
-- If the `Claude-Data-Wrangler` plugin is not installed, fall back to fix-in-place and note in the report that a wrangler skill would have been the better path.
+- If the `data-wrangler` plugin is not installed, fall back to fix-in-place and note in the report that a wrangler skill would have been the better path.
 - Pairs well with `forensic-sweep` (detects whether cleaning has happened) — type-consistency-sweep fixes what's broken, forensic-sweep flags what's been changed without permission.

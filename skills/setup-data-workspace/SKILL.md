@@ -84,7 +84,7 @@ To rebuild from source after data files change:
 
     duckdb data.duckdb < scripts/load_data.sql
 
-For analysis tasks, prefer the `claude-data-analyst` plugin skills (`/claude-data-analyst:trend-analysis`, `:correlation-analysis`, etc.) — they assume `duckdb` on PATH and will operate on `data.duckdb` by default.
+For analysis tasks, prefer the `data-analyst` plugin skills (`/data-analyst:trend-analysis`, `:correlation-analysis`, etc.) — they assume `duckdb` on PATH and will operate on `data.duckdb` by default.
 ```
 
 Fill in row counts from Step 3. For descriptions, ask the user or infer from column names — mark inferred ones with `(inferred)`.
@@ -96,7 +96,7 @@ Summarise:
 - Tables/views created with row counts.
 - Where the loader script lives.
 - What was added to CLAUDE.md and .gitignore.
-- Suggested next steps (e.g. "run `/claude-data-analyst:data-dictionary-creator` to document columns").
+- Suggested next steps (e.g. "run `/data-analyst:data-dictionary-creator` to document columns").
 
 ## Notes
 

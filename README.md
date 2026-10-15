@@ -16,7 +16,7 @@ First-pass data analysis toolkit for Claude Code. Point it at a CSV, Parquet, or
 | `data-enrichment` | Diagnose gaps between the user's analytical goal and the dataset, propose external sources, plan and implement enrichment. |
 | `multivariate-analysis` | Partial correlations, VIF, regression with interactions, Lasso, and PCA to tell which variables actually drive the target and which are redundant. |
 | `forensic-sweep` | Flag data that looks suspiciously clean, imputed, smoothed, or pre-normalised — so the user knows what was done upstream before they got it. |
-| `type-consistency-sweep` | Detect within- and cross-file type inconsistencies that block analysis or DB loading; fix trivial cases or delegate to a `Claude-Data-Wrangler` skill. |
+| `type-consistency-sweep` | Detect within- and cross-file type inconsistencies that block analysis or DB loading; fix trivial cases or delegate to a `data-wrangler` skill. |
 | `standard-deviation` | Compute SD (plus variance, IQR, MAD, CV) for numeric columns with trustworthiness flags for skew, heavy tails, and small n. |
 | `sample-size` | Characterise the *effective* sample size per analytical question, flag underpowered segments, and give a go/no-go verdict. |
 | `data-reporting` | Generate a parametric PDF report (Typst) describing the dataset — schema, distributions, quality, findings from prior skills. |
@@ -37,7 +37,7 @@ Optional:
 ## Installation
 
 ```bash
-claude plugins install claude-data-analyst@danielrosehill
+claude plugins install data-analyst@danielrosehill
 ```
 
 ## License
